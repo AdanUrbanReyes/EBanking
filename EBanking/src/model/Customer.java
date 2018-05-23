@@ -3,10 +3,17 @@ package model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import model.abstract_classes.Account;
+import model.concrete_accounts.CheckAccount;
+import model.concrete_accounts.SavingAccount;
+import model.enumerations.AccountState;
+import model.exceptions.UnFoundedAccount;
 import model.interfaces.AccountService;
 
-public class Customer implements AccountService{
-
+public class Customer implements AccountService, Comparable<Customer>{
+	private static int numberSavingAccount = 0;
+	private static int numberCheckAccount = 0;
+	
 	private int number;
 	private String name;
 	private Address address;
@@ -46,43 +53,53 @@ public class Customer implements AccountService{
 		return rfc;
 	}
 
-	public ArrayList<Account> getAccounts() {
-		return accounts;
+	@Override
+	public void inactiveAccount(int id) throws UnFoundedAccount{
+		Account aai = getAccount(id);
+		if(aai != null) {
+			aai.setState(AccountState.INACTIVE);
+			aai.setInactivingDate(LocalDate.now());
+		}
 	}
 
 	@Override
-	public void inactiveAccount(int id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Account getAccount(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Account getAccount(int id) throws UnFoundedAccount{
+		Account fa = accounts.stream().filter(a -> a.getNumber() == id).findFirst().orElse(null);
+		if(fa == null) {
+			throw new UnFoundedAccount(id);
+		}
+		return fa;
 	}
 
 	@Override
 	public ArrayList<Account> getCustomerAccounts() {
-		// TODO Auto-generated method stub
-		return null;
+		return accounts;
 	}
 
 	@Override
 	public void addSavingAccount(double balance, double annualTax) {
-		// TODO Auto-generated method stub
-		
+		Account a = new SavingAccount(numberSavingAccount, balance, annualTax);
+		a.setOpeningDate(LocalDate.now());
+		accounts.add(a);
+		numberSavingAccount++;
 	}
 
 	@Override
 	public void addCheckAccount(double balance, double monthTax) {
-		// TODO Auto-generated method stub
-		
+		Account a = new CheckAccount(numberCheckAccount, balance, monthTax);
+		a.setOpeningDate(LocalDate.now());
+		accounts.add(a);		
+		numberCheckAccount++;
 	}
 	
 	@Override
 	public String toString() {
 		return name;
+	}
+
+	@Override
+	public int compareTo(Customer o) {
+		return (o.getNumber() == this.getNumber()) ? 0 : (o.getNumber() < this.getNumber()) ? -1 : 1;
 	}
 	
 }

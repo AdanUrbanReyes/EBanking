@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
+import model.exceptions.UnFoundedCustomer;
 import model.interfaces.CustomerService;
 
 public class Bank implements CustomerService{
@@ -60,19 +61,28 @@ public class Bank implements CustomerService{
 	}
 
 	@Override
-	public void removeCustomer(int id) {
+	public void removeCustomer(int id) throws UnFoundedCustomer {
+		if(customers.stream().filter(c -> c.getNumber() == id).findFirst().orElse(null) != null) {
+			customers.removeIf(c -> c.getNumber() == id );	
+		}else {
+			throw new UnFoundedCustomer(id) ;
+		}
 		
 	}
 
 	@Override
-	public void updateCustomer(Customer customer) {
-		customers.remove(customer);
+	public void updateCustomer(Customer customer) throws UnFoundedCustomer{
+		removeCustomer(customer.getNumber());
+		addCustomer(customer);
 	}
 
 	@Override
-	public void readCustomer(int id) {
-		// TODO Auto-generated method stub
-		
+	public Customer readCustomer(int id) throws UnFoundedCustomer{
+		Customer fc = customers.stream().filter(c -> c.getNumber() == id).findFirst().orElse(null);
+		if(fc == null) {
+			throw new UnFoundedCustomer(id);
+		}
+		return fc;
 	}
 	
 	@Override
