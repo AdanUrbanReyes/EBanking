@@ -3,6 +3,7 @@ package model.abstract_classes;
 import java.time.LocalDate;
 
 import model.enumerations.AccountState;
+import model.exceptions.NotEnoughBalance;
 
 public abstract class Account {
 	
@@ -33,10 +34,6 @@ public abstract class Account {
 		return balance;
 	}
 
-	public void setBalance(double balance) {
-		this.balance = balance;
-	}
-
 	public AccountState getState() {
 		return state;
 	}
@@ -53,5 +50,18 @@ public abstract class Account {
 		this.inactivingDate = inactivingDate;
 	}
 	
+
+	public void addToBalance(double ammount) {
+		balance += ammount;
+	}
+	
+	public void substractToBalance(double ammount) throws NotEnoughBalance {
+		if(balance < ammount) {
+			throw new NotEnoughBalance();
+		}
+		balance -= ammount;
+	}	
+	
+	public abstract void printData();
 	
 }

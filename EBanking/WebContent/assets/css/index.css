@@ -1,0 +1,19 @@
+@charset "ISO-8859-1";
+
+div.position{
+	border: 1px solid yellow;
+	margin-top: 30px;
+	cursor: pointer;
+	background: gray repeating-linear-gradient(-45deg, transparent, transparent 1px, #fff 1px, #fff 6px);
+}
+
+div.position:active{
+    transform: translateY(11px);
+}
+
+p.position{
+	height: 100%;
+	line-height: 128px;
+	font-weight: bold;
+	font-size: 50px;
+}

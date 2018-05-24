@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+
+body{
+	background-color:  rgba(252, 255, 245, 0.5);
+}
+
+div.body{
+    position: absolute;
+     margin: auto;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     width: 700px;
+     height: 500px;	
+}
+
+div.title{
+	width : 100%;
+	margin: 0 auto;
+	color: #1f88c4;
+}
+
+h1.title{
+	width: 100%;
+	text-align: center;
+	border-bottom: 1px solid #1f88c4; 
+	text-transform: uppercase;
+}
+
+h3{
+	width: 100%;
+	text-align: center;
+	margin-top: 30px; 
+}

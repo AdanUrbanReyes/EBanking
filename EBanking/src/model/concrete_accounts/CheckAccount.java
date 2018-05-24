@@ -9,6 +9,16 @@ public class CheckAccount extends Account{
 		super(number, balance);
 		this.monthTax = monthTax;
 	}
+	
+	public double getMonthTax() {
+		return monthTax;
+	}
+
+
+
+	public void setMonthTax(double monthTax) {
+		this.monthTax = monthTax;
+	}
 
 	@Override
 	public String toString() {
@@ -19,6 +29,11 @@ public class CheckAccount extends Account{
 		sb.append(", Month Tax : ");
 		sb.append(monthTax);
 		return sb.toString();		
+	}
+
+	@Override
+	public void printData() {
+		System.out.println(toString());
 	}
 	
 }

@@ -19,15 +19,7 @@ public class SavingAccount extends Account{
 		this.annualTax = annualTax;
 	}
 	
-	public void getTax() {
-		
-	}
-
-	public void addToBalance(double ammount) {
-		balance += ammount;
-	}
-	
-	public void substractToBalance() {
+	public void calcTax() {
 		
 	}
 	
@@ -40,6 +32,11 @@ public class SavingAccount extends Account{
 		sb.append(", Year Tax : ");
 		sb.append(annualTax);
 		return sb.toString();
+	}
+
+	@Override
+	public void printData() {
+		System.out.println(toString());
 	}
 
 }
