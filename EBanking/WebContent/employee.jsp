@@ -22,9 +22,34 @@
 					<h3>Selecciona una opcion</h3>
 				</div>
 				<div class="row">
-					<div class="col-md-3">;
-						
-					</div>
+					<a href="#" class="col-md-4 col-sm-6 col-xs-12 text-center menu">
+					    <h4 class="text-uppercase">Agregar Cliente</h4>
+					    <img alt="Agregar Cliente" class="img-fluid menu" src="./assets/images/menu/addCustomer.png"/>
+					</a>
+					<a href="#" class="col-md-4 col-sm-6 col-xs-12 text-center menu">
+					    <h4 class="text-uppercase">Dar de Baja Cliente</h4>
+					    <img alt="Dar de Baja Cliente" class="img-fluid menu" src="./assets/images/menu/removeCustomer.png"/>
+					</a>
+					<a href="#" class="col-md-4 col-sm-6 col-xs-12 text-center menu">
+					    <h4 class="text-uppercase">Modificar Cliente</h4>
+					    <img alt="Modificar Cliente" class="img-fluid menu" src="./assets/images/menu/modifyCustomer.png"/>
+					</a>
+					<a href="#" class="col-md-4 col-sm-6 col-xs-12 text-center menu">
+					    <h4 class="text-uppercase">Crear Cuenta</h4>
+					    <img alt="Crear Cuenta" class="img-fluid menu" src="./assets/images/menu/addAccount.png"/>
+					</a>
+					<a href="#" class="col-md-4 col-sm-6 col-xs-12 text-center menu">
+					    <h4 class="text-uppercase">Cancelar Cuenta</h4>
+					    <img alt="Cancelar Cuenta" class="img-fluid menu" src="./assets/images/menu/removeAccount.png"/>
+					</a>
+					<a href="#" class="col-md-4 col-sm-6 col-xs-12 text-center menu">
+					    <h4 class="text-uppercase">Consultar Cuentas</h4>
+					    <img alt="Consultar Cuentas" class="img-fluid menu" src="./assets/images/menu/searchAccount.png"/>
+					</a>
+					<a href="#" class="col-md-4 col-sm-6 col-xs-12 text-center menu">
+					    <h4 class="text-uppercase">Consultar Cliente</h4>
+					    <img alt="Consultar Cliente" class="img-fluid menu" src="./assets/images/menu/searchCustomer.png"/>
+					</a>										
 				</div>
 			</div>
 		</div>

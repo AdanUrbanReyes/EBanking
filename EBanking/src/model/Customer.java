@@ -21,6 +21,13 @@ public class Customer implements AccountService, Comparable<Customer>{
 	private String rfc;
 	private ArrayList<Account> accounts;
 	
+	public Customer(int number, String name, LocalDate birthday, String rfc) {
+		this.number = number;
+		this.name = name;
+		this.birthday = birthday;
+		this.rfc = rfc;		
+	}
+	
 	public Customer(int number, String name, Address address, String rfc, int year, int month, int day) {
 		this.number = number;
 		this.name = name;

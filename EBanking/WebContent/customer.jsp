@@ -20,7 +20,17 @@
 			<div class="container">
 				<div class="row">
 					<h3>Selecciona una opcion</h3>
-				</div>						
+				</div>
+				<div class="row">
+					<a href="#" class="col-md-4 col-sm-6 col-xs-12 text-center menu">
+					    <h4 class="text-uppercase">Consultar Cuentas</h4>
+					    <img alt="Consultar Cuentas" class="img-fluid menu" src="./assets/images/menu/searchAccount.png"/>
+					</a>
+					<a href="#" class="col-md-4 col-sm-6 col-xs-12 text-center menu">
+					    <h4 class="text-uppercase">Consultar Cliente</h4>
+					    <img alt="Consultar Cliente" class="img-fluid menu" src="./assets/images/menu/searchCustomer.png"/>
+					</a>				
+				</div>
 			</div>
 		</div>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

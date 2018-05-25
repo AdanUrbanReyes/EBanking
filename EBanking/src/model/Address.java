@@ -6,7 +6,7 @@ public class Address {
 	private String number;
 	private String colony;
 	private String city;
-	private int postalCode;
+	private String postalCode;
 	
 	
 	
@@ -16,11 +16,7 @@ public class Address {
 		this.colony = colony;
 		this.city = city;
 		if(postalCode.trim().length() == 5) {
-			try {
-				this.postalCode = Integer.parseInt(postalCode);	
-			}catch(Exception e) {
-				
-			}
+			this.postalCode = postalCode;	
 		}
 		
 	}
@@ -75,13 +71,13 @@ public class Address {
 
 
 
-	public int getPostalCode() {
+	public String getPostalCode() {
 		return postalCode;
 	}
 
 
 
-	public void setPostalCode(int postalCode) {
+	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}
 
